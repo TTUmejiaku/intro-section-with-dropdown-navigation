@@ -1,0 +1,13 @@
+@use "./functions" as f;
+@use "../globals/variables" as v;
+
+$breakpoint-up: (
+  "medium": f.em(650),
+  "large": f.em(900),
+);
+
+@mixin mq-up($size) {
+  @media (min-width: map-get($breakpoint-up, $size)) {
+    @content;
+  }
+}

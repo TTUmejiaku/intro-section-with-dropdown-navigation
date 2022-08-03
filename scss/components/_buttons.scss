@@ -1,0 +1,94 @@
+@use "../abstracts/breakpoints" as b;
+@use "../globals/variables" as v;
+@use "../abstracts/functions" as f;
+
+.nav {
+  /* link and button section */
+
+  &__btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+
+    @include b.mq-up(medium) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0;
+    }
+  }
+
+  &__btn {
+    color: v.$neut__medium-gray;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    &:hover {
+      color: v.$neut__almost-black;
+    }
+  }
+
+  .register {
+    border: 2px solid v.$neut__medium-gray;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    width: 70%;
+    text-align: center;
+
+    @include b.mq-up(medium) {
+      width: 100%;
+      padding: 1rem 2rem;
+      margin-left: 2rem;
+    }
+
+    &:hover {
+      border-color: v.$neut__almost-black;
+    }
+  }
+}
+
+/* hamburger */
+
+.toggle {
+  background-color: transparent;
+  z-index: 1000;
+  cursor: pointer;
+
+  &__close {
+    display: none;
+  }
+
+  @include b.mq-up(medium) {
+    display: none;
+  }
+}
+
+/* show & hide toggle */
+
+.toggle.show-menu {
+  & .toggle__close {
+    display: block;
+  }
+
+  & .toggle__open {
+    display: none;
+  }
+}
+
+.hero__btn {
+  background-color: v.$neut__almost-black;
+  color: v.$neut__almost-white;
+  padding: 1.3rem;
+  margin: 2rem auto;
+  display: block;
+  max-width: 70%;
+  border-radius: 0.7rem;
+  text-align: center;
+
+  @include b.mq-up(medium) {
+    margin: 3rem 0;
+    max-width: 40%;
+  }
+}

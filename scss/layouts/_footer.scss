@@ -1,0 +1,18 @@
+@use "../abstracts/breakpoints" as b;
+@use "../globals/variables" as v;
+@use "../abstracts/functions" as f;
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-block: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.392);
+  min-width: f.rem(375);
+
+  @include b.mq-up(medium) {
+    margin-top: 3rem;
+  }
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
